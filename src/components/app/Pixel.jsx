@@ -8,7 +8,7 @@ function Pixel({colour, onClick}) {
             bg={colour} 
             p={'5'} 
             display={'inline-block'} 
-            onClick={onClick} 
+            onClick={onClick}
             borderWidth = {1}
             borderColor={'grey.500'}
         />

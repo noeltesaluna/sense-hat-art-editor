@@ -7,7 +7,10 @@ function Generator({gridColours}) {
   
   return (
     <div>
-      <Button onClick={() => setGridCode(gridColoursToString(gridColours))}>
+      <Button 
+        onClick={() => setGridCode(gridColoursToString(gridColours))}
+        bg={'green.300'}
+      >
           Generate
       </Button> 
       <Code 
