@@ -3,16 +3,17 @@ import { HexColorPicker } from 'react-colorful'
 import { Button, Flex, Stack } from '@chakra-ui/react';
 import { SimpleGrid } from '@chakra-ui/react';
 import Pixel from './pixel';
+import PickerCell from './PickerCell';
 
 function Editor({gridColours, setGridColours}) {
     const [newColour, setNewColour] = useState("#000000") 
     const [lastColours, setLastColours] = useState(
-        Array(5).fill("#000000")
+        Array(8).fill("#000000")
     )
     
     const pickLastColour = (index) => {
         console.log(index)
-        setNewColour(lastColours[4 - index])
+        setNewColour(lastColours[lastColours.length - 1 - index])
     }
 
     const updateLastColours = (lastColour) => {
@@ -42,11 +43,11 @@ function Editor({gridColours, setGridColours}) {
 
     return (
         <div>
-            <Flex>
+            <Flex gap={1} p={1}>
                 <HexColorPicker color={newColour} onChange={setNewColour}/>
-                <Stack gap={0} ml={0.5}>
+                <Stack gap={1} ml={0.5}>
                     {lastColours.slice(0).reverse().map((colour, index) => (
-                        <Pixel
+                        <PickerCell
                             key={index}
                             colour={colour}
                             onClick={() => pickLastColour(index)}
@@ -54,7 +55,6 @@ function Editor({gridColours, setGridColours}) {
                     ))}
                 </Stack>
             </Flex>
-            <Pixel colour={newColour}/>
             <SimpleGrid 
                 columns={[8, null, 8]} 
                 borderWidth = {1} 
