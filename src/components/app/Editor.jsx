@@ -5,7 +5,7 @@ import { SimpleGrid } from '@chakra-ui/react';
 import Pixel from './pixel';
 
 function Editor({gridColours, setGridColours}) {
-    const [newColour, setNewColour] = useState();
+    const [newColour, setNewColour] = useState("#000000") 
       
     const updateColour = (index, colourUpdate) => {
     setGridColours((prevColours) => {
@@ -24,7 +24,12 @@ function Editor({gridColours, setGridColours}) {
         <div>
             <HexColorPicker color={newColour} onChange={setNewColour} />
                 <Button onClick={() => clearGrid()}>Clear</Button>
-                <SimpleGrid columns={[8, null, 8]}>
+                <SimpleGrid 
+                    columns={[8, null, 8]} 
+                    borderWidth = {1} 
+                    borderColor={'grey.500'}
+                    w={'340px'}
+                >
                     {gridColours.map((colour, index) => (
                     <Pixel
                         key={index}

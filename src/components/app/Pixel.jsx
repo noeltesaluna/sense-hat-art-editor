@@ -10,6 +10,7 @@ function Pixel({colour, onClick}) {
             display={'inline-block'} 
             onClick={onClick} 
             borderWidth = {1}
+            borderColor={'grey.500'}
         />
     )
 }
