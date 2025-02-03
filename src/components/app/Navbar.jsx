@@ -14,13 +14,6 @@ function Navbar() {
             src='\src\assets\Logo.png'
             h={'10'}
         />
-        <Text 
-            fontFamily="'Jersey 10', sans-serif"
-            fontSize='6xl'
-            fontWeight={'400'}
-        >
-            SenseHat Pixel Art Editor
-        </Text>
     </Flex>
   )
 }
