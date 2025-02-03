@@ -3,6 +3,7 @@ import Editor from './components/app/Editor'
 import { Box, Button, Flex } from '@chakra-ui/react'
 import CodeBlock from './components/app/CodeBlock'
 import { gridColoursToString } from './functions/gridToCode'
+import Navbar from './components/app/Navbar'
 
 function App() {
   <Button 
@@ -20,6 +21,7 @@ function App() {
   
   return (
     <Box w={'100bh'} bg={'#242424'} h={'100vh'}>
+      <Navbar></Navbar>
       <Flex align={'center'} justify={'center'}>
         <Editor 
           gridColours={gridColours}
