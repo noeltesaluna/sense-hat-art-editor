@@ -5,7 +5,7 @@ import { SimpleGrid } from '@chakra-ui/react';
 import Pixel from './pixel';
 import PickerCell from './PickerCell';
 
-function Editor({gridColours, setGridColours}) {
+function Editor({gridColours, setGridColours, setGridCode}) {
     const [newColour, setNewColour] = useState("#000000") 
     const [lastColours, setLastColours] = useState(
         Array(8).fill("#000000")
@@ -35,16 +35,49 @@ function Editor({gridColours, setGridColours}) {
         })
     }
 
-    const clearGrid = () => {
+    const fillGrid = (colour) => {
         setGridColours(() => {
-            return Array(64).fill("#000000")
+            return Array(64).fill(colour)
         })
     }
 
     return (
-        <div>
-            <Flex gap={1} p={1}>
-                <HexColorPicker color={newColour} onChange={setNewColour}/>
+        <Flex 
+            align={'center'} 
+            justify={'center'} 
+            p={'10'} 
+            bg={'#18181B'} 
+            borderRadius={10}
+        >
+            {/* Tools */}
+            <Flex gap={1} p={1} mr={5}>
+                <Stack>
+                    <HexColorPicker color={newColour} onChange={setNewColour}/>
+                    <Flex justify={'space-between'} gap={1}>
+                        <Button
+                            bg={'purple.400'}
+                            onClick={() => fillGrid(newColour)}
+                            w={'50%'}
+                        >
+                            Fill
+                        </Button>
+                        <Button 
+                            onClick={() => fillGrid("#000000")}
+                            bg={'red.500'}
+                            w={'45%'}
+                        >
+                            Clear
+                        </Button>
+                    </Flex>
+                    <Button 
+                        onClick={setGridCode}
+                        bg={'green.400'}
+                    >
+                        Generate Code
+                    </Button>
+                </Stack>
+                
+                
                 <Stack gap={1} ml={0.5}>
                     {lastColours.slice(0).reverse().map((colour, index) => (
                         <PickerCell
@@ -55,6 +88,8 @@ function Editor({gridColours, setGridColours}) {
                     ))}
                 </Stack>
             </Flex>
+            
+            {/* Pixel Art Grid */}
             <SimpleGrid 
                 columns={[8, null, 8]} 
                 borderWidth = {1} 
@@ -69,13 +104,8 @@ function Editor({gridColours, setGridColours}) {
                     />
                 ))}
             </SimpleGrid>
-            <Button 
-                onClick={() => clearGrid()}
-                bg={'red.500'}
-            >
-                Clear
-            </Button>
-        </div>
+            
+        </Flex>
     )
 }
 
