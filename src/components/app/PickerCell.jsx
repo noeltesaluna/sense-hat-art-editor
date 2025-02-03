@@ -1,6 +1,5 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import Pixel from './pixel';
 
 function PickerCell({colour, onClick}) {
     return (

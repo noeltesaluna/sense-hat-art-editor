@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box } from '@chakra-ui/react'
-import Pixel from './pixel';
+import Pixel from './Pixel';
 
 function Row({newColour}) {
     let pixels = [];
