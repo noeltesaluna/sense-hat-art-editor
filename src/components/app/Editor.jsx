@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { HexColorPicker } from 'react-colorful'
 import { Button, Flex, Stack } from '@chakra-ui/react';
 import { SimpleGrid } from '@chakra-ui/react';
-import Pixel from './pixel';
+import Pixel from './Pixel';
 import PickerCell from './PickerCell';
 
 function Editor({gridColours, setGridColours, setGridCode}) {
