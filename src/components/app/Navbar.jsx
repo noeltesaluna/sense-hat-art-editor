@@ -11,7 +11,7 @@ function Navbar() {
         p={8}
     >
         <Image 
-            src='\src\assets\Logo.png'
+            src='Logo.png'
             h={'10'}
         />
     </Flex>
