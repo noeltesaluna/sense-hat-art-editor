@@ -6,13 +6,6 @@ import { gridColoursToString } from './functions/gridToCode'
 import Navbar from './components/app/Navbar'
 
 function App() {
-  <Button 
-          onClick={() => setGridCode(gridColoursToString(gridColours))}
-          bg={'green.300'}
-        >
-            Generate
-        </Button> 
-
   const [gridColours, setGridColours] = useState(
     Array(64).fill("#000000")
   )
