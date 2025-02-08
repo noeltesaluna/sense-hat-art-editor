@@ -6,7 +6,7 @@ function Navbar() {
     <Flex 
         h={'5vh'}
         bg={'#1A1A1A'}
-        mb={10}
+        mb={5}
         alignItems={'center'}
         p={8}
     >

@@ -32,7 +32,7 @@ function App() {
       <Flex 
         align={'center'} 
         justify={'center'}
-        mt={'10'}
+        mt={'5'}
         px={5}
       >
         <CodeBlock
