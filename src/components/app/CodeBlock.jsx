@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { Code, Flex } from '@chakra-ui/react'
+import { Code, Flex, Button, Stack} from '@chakra-ui/react'
 
 function CodeBlock({gridCode}) {
+  let output = `from sense_hat import SenseHat
+
+sense = SenseHat()
+pixels = [
+${gridCode}
+]
+
+sense.set_pixels(pixels)`
+
   return (
     <Flex 
       align={'center'} 
@@ -10,21 +19,21 @@ function CodeBlock({gridCode}) {
       bg={'#18181B'} 
       borderRadius={10}
     >
-      <Code 
-        display={'block'}
-        whiteSpace={'pre'}
-        children={`
-from sense_hat import SenseHat
-
-sense = SenseHat()
-pixels = [
-${gridCode}
-]
-
-sense.set_pixels(pixels)
-        `}>
-      </Code>
+      <Stack>
+        <Code 
+          display={'block'}
+          whiteSpace={'pre'}
+          children={output}>
+        </Code>
+        <Button 
+          w={20}
+          mt={5}
+          onClick={() => {navigator.clipboard.writeText(output)}}
+        >
+          Copy</Button>
+      </Stack>
     </Flex>
+    
   )
 }
 
