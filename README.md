@@ -1,6 +1,7 @@
 # SenseHAT Art Editor
 
 ## About
+[![SenseHAT Art Editor Demo][product-screenshot]](https://sensehatpixelarteditor.netlify.app/)
 When completing a PIOT class in university, we had to use a Raspberry Pi with a SenseHAT. We were given an assessment where we had to create pixel art.
 While completing it I thought it was extremely tedious. I thought that one day I'll create an app to easily create art and obtain the code. This project is the result of that.
 
@@ -27,3 +28,5 @@ docker compose up
 ```
 docker compose down
 ```
+
+[product-screenshot]: images/demo.png
