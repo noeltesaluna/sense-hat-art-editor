@@ -13,7 +13,7 @@ function App() {
   const [gridCode, setGridCode] = useState(gridColoursToString(gridColours))
   
   return (
-    <Box w={'100bh'} bg={'#242424'} h={'100vh'}>
+    <Box w={'100bh'} bg={'#242424'} h={'100%'} pb={'10'} >
       <Navbar></Navbar>
       <Flex align={'center'} justify={'center'}>
         <Editor 
